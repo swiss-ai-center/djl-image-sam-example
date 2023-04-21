@@ -1,6 +1,7 @@
 import os
 import torch
 from segment_anything import sam_model_registry
+from patches import apply_patches
 from sam_predictor_base_model import SamPredictorBaseModel
 
 
@@ -14,6 +15,8 @@ def main():
         os.system(
             "wget https://dl.fbaipublicfiles.com/segment_anything/sam_vit_b_01ec64.pth"
         )
+
+    apply_patches()
 
     # An instance of the model.
     base_model = sam_model_registry["vit_b"](checkpoint="./sam_vit_b_01ec64.pth")
