@@ -7,9 +7,11 @@ import ai.djl.translate.Transform;
 import ai.djl.translate.Translator;
 import ai.djl.translate.TranslatorContext;
 
-import java.io.IOException;
 import java.util.List;
 
+/**
+ * Translator for the SAM model.
+ */
 public class SamTranslator implements Translator<Image, SamRawOutput> {
 
 	private final Builder builder;
@@ -22,9 +24,11 @@ public class SamTranslator implements Translator<Image, SamRawOutput> {
 		return new Builder();
 	}
 
-	public void prepare(TranslatorContext ctx) throws IOException {
-	}
-
+	/**
+	 * @param ctx   Context for the translation
+	 * @param input Input to the model (image)
+	 * @return NDList of the input
+	 */
 	@Override
 	public NDList processInput(TranslatorContext ctx, Image input) {
 		// Convert image to NDArray
@@ -36,6 +40,11 @@ public class SamTranslator implements Translator<Image, SamRawOutput> {
 		return new NDList(array);
 	}
 
+	/**
+	 * @param ctx  Context for the translation
+	 * @param list NDList of the output from the model
+	 * @return SamRawOutput of the output from the model
+	 */
 	@Override
 	public SamRawOutput processOutput(TranslatorContext ctx, NDList list) {
 		// Note: this causes a memory leak if the NDArrays are not closed

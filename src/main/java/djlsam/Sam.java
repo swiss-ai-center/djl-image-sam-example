@@ -19,9 +19,10 @@ import djlsam.translators.SamTranslator;
 import java.io.IOException;
 import java.nio.file.Paths;
 
+/**
+ * Class for the SAM model wrapping the TorchScript SAM model.
+ */
 public class Sam {
-	private final Criteria<Image, SamRawOutput> criteria;
-	private final ZooModel<Image, SamRawOutput> model;
 	private final Predictor<Image, SamRawOutput> predictor;
 
 	public Sam() {
@@ -31,7 +32,7 @@ public class Sam {
 				// Normalize with mean and std of ImageNet / 255
 				.addTransform(new Normalize(new float[]{0.485f, 0.456f, 0.406f}, new float[]{0.229f, 0.224f, 0.225f}))
 				.build();
-		this.criteria = Criteria.builder()
+		Criteria<Image, SamRawOutput> criteria = Criteria.builder()
 				.setTypes(Image.class, SamRawOutput.class)
 				.optModelPath(Paths.get("src/resources/pytorch_models/sam_vit_b"))
 				.optTranslatorFactory(new SemanticSegmentationTranslatorFactory())
@@ -39,18 +40,19 @@ public class Sam {
 				.optTranslator(translator)
 				.optProgress(new ProgressBar())
 				.build();
+		ZooModel<Image, SamRawOutput> model;
 		try {
-			this.model = criteria.loadModel();
-		} catch (IOException e) {
-			throw new RuntimeException(e);
-		} catch (ModelNotFoundException e) {
-			throw new RuntimeException(e);
-		} catch (MalformedModelException e) {
+			model = criteria.loadModel();
+		} catch (IOException | ModelNotFoundException | MalformedModelException e) {
 			throw new RuntimeException(e);
 		}
 		this.predictor = model.newPredictor();
 	}
 
+	/**
+	 * @param image Image to predict on
+	 * @return SamRawOutput of the output from the model
+	 */
 	public SamRawOutput predict(Image image) {
 		try {
 			return predictor.predict(image);

@@ -103,13 +103,13 @@ The `SamRawOutput` object is a custom class wrapper that contains the output ten
 
 ### Criteria, Model, and Predictor
 
-The `criteria` object is used to specify the input and output types of the model. You can find an example [here](/src/main/java/djlsam/Sam.java#L34).
+The `criteria` object is used to specify the input and output types of the model. You can find an example [here](/src/main/java/djlsam/Sam.java#L35).
 
 > **Note:** The path of the TorchScript model must be a directory that contains the `.pt` file and it must have the same name as the directory.
 
-By calling the method `criteria.loadModel();`, the `model` object is created. You can find an example [here](/src/main/java/djlsam/Sam.java#L43).
+By calling the method `criteria.loadModel();`, the `model` object is created. You can find an example [here](/src/main/java/djlsam/Sam.java#L45).
 
-Finally, the `predictor` object is created by calling the method `model.newPredictor();`. You can find an example [here](/src/main/java/djlsam/Sam.java#L51).
+Finally, the `predictor` object is created by calling the method `model.newPredictor();`. You can find an example [here](/src/main/java/djlsam/Sam.java#L49).
 
 DJL has many input/output types as well as translators already implemented. You can find them [here](https://javadoc.io/doc/ai.djl/api/latest/index.html).
 

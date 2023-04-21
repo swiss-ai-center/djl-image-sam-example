@@ -10,14 +10,14 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.logging.Logger;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 class SamTest {
 
-	private static final Logger logger = Logger.getLogger(SamTest.class.getName());
-
+	/**
+	 * Test the SAM model by loading an image and predicting the mask.
+	 */
 	@Test
 	void predict() {
 		Path imageFile = Paths.get("src/resources/images/test.jpg");
@@ -38,7 +38,7 @@ class SamTest {
 			int width = (int) mask.getShape().get(1);
 			int[] pixels = new int[width * height];
 
-
+			// We convert the mask to an image to visualize it
 			for (int h = 0; h < height; ++h) {
 				for (int w = 0; w < width; ++w) {
 					int red;
@@ -69,8 +69,6 @@ class SamTest {
 			imgOut.save(Files.newOutputStream(outputPath), "png");
 
 			output.close();
-
-
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
