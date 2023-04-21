@@ -1,7 +1,6 @@
 import torch
 from torch import nn
 from segment_anything.modeling.sam import Sam
-from patches.predictor import SamPredictorMock as SamPredictor
 
 
 class SamPredictorBaseModel(nn.Module):
