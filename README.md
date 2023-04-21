@@ -90,6 +90,8 @@ Predictor<Image, SamRawOutput> predictor;
 
 Each object has an input and output type which should match the input and output types of the `translator` object.
 
+DJL has many input/output types as well as translators already implemented. You can find them [here](https://javadoc.io/doc/ai.djl/api/latest/index.html).
+
 ### Translator
 
 The `translator` object is used to convert the input/output tensors to/from the TorchScript model. You can find an example [here](/src/main/java/djlsam/translators/SamTranslator.java).
@@ -110,8 +112,6 @@ The `criteria` object is used to specify the input and output types of the model
 By calling the method `criteria.loadModel();`, the `model` object is created. You can find an example [here](/src/main/java/djlsam/Sam.java#L45).
 
 Finally, the `predictor` object is created by calling the method `model.newPredictor();`. You can find an example [here](/src/main/java/djlsam/Sam.java#L49).
-
-DJL has many input/output types as well as translators already implemented. You can find them [here](https://javadoc.io/doc/ai.djl/api/latest/index.html).
 
 ### Tips
 
