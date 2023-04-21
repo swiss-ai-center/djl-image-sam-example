@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="83fbc188-1aec-4b47-a191-47c3a894ccc8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/djlsam/translators/SamRawOutput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/djlsam/translators/SamRawOutput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/djlsam/translators/SamTranslator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/djlsam/translators/SamTranslator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/test/djlsam/SamTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/djlsam/SamTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="83fbc188-1aec-4b47-a191-47c3a894ccc8" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
