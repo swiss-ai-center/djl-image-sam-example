@@ -13,7 +13,10 @@
 
 ## Introduction
 
-This directory contains Python code to patch and save the Segment Anything Model (SAM) as TorchScript to a new file.
+This directory contains Python code to patch and save the Segment Anything Model (SAM) as TorchScript to a new file. The implementation is meant to
+be more of a proof of concept and a place where to start.
+
+This TorchScript model takes 1 image as input and outputs the mask in the center of the image.
 
 We used the `segment_anything` Python package provided by the [Segment Anything Model](https://github.com/facebookresearch/segment-anything) repository.
 
