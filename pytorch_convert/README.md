@@ -1,7 +1,4 @@
-<div style="text-align: center; margin-bottom: 2.5rem">
-    <h1>Model to TorchScript</h1>
-    <small>Segment Anything Model (SAM)</small>
-</div>
+<h1>Model to TorchScript</h1>
 
 - [Introduction](#introduction)
 - [Installation \& Usage](#installation--usage)

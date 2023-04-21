@@ -1,7 +1,4 @@
-<div style="text-align: center; margin-bottom: 2.5rem">
-    <h1>DJL Segment Anything Model (SAM)</h1>
-    <small>Java Wrapper</small>
-</div>
+<h1>DJL Segment Anything Model (SAM)</h1>
 
 - [Introduction](#introduction)
 - [Project Structure](#project-structure)
