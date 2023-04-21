@@ -167,3 +167,11 @@ buildNumber.properties
 .classpath
 
 # End of https://www.toptal.com/developers/gitignore/api/intellij,macos,maven
+
+# Python
+*/**/.venv
+*/**/__pycache__
+
+# Project specific
+*.pt
+*.pth
